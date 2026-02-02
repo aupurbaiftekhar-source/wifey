@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+      padding-top: 50px;
+    }
+    button {
+      background: #ff2d55;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      margin-top: 20px;
+    }
+    #message {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Tap & Feel My Love 💕</h1>
+<p>(First tap starts music 🎵)</p>
+
+<button onclick="playGame()">Tap ❤️</button>
+<div id="message"></div>
+
+<audio id="bgm" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_8f8c6d2c7e.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const messages = [
+    "You’re my favorite person 💙",
+    "Your smile is my weakness 😌",
+    "I feel calm thinking of you 🌙",
+    "Even silence with you feels nice 💕",
+    "I’m always on your side 🫶"
+  ];
+
+  let started = false;
+
+  function playGame() {
+    const music = document.getElementById("bgm");
+    if (!started) {
+      music.play();
+      started = true;
+    }
+    const r = Math.floor(Math.random() * messages.length);
+    document.getElementById("message").innerText = messages[r];
+  }
+</script>
+
+</body>
+</html>
+
